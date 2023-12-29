@@ -1,0 +1,143 @@
+/* ================== google fonts ================== */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.preheader {
+  background: #f76481;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.maincontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 4rem 0 0;
+}
+
+.gamecontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+  position: relative;
+}
+
+.winningline {
+  background: #f76481;
+  height: 3px;
+  width: 30vw;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+}
+
+.gameinfocontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nexturn {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.box {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6vw;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.box:hover {
+  background: #ff93a8;
+}
+
+/* ================== tic tac toe borders ================== */
+.bt {
+  border-top: none;
+}
+
+.br {
+  border-right: none;
+}
+
+.bb {
+  border-bottom: none;
+}
+
+.bl {
+  border-left: none;
+}
+
+#reset {
+  border: 1px solid #f76481;
+  outline: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: #f76481;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.4s ease-in-out;
+}
+
+#reset:hover {
+  background: #f76481;
+  color: white;
+}
+
+.photobox img {
+  width: 210px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* ================== media query ================== */
+@media screen and (max-width: 650px) {
+  .maincontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0 0;
+    flex-direction: column;
+  }
+
+  .gamecontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 20vw);
+    grid-template-rows: repeat(3, 20vw);
+    place-content: center;
+  }
+
+  .gameinfocontainer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photobox img {
+    width: 8rem;
+  }
+
+  .nexturn {
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+  .box {
+    font-size: 10vw;
+  }
+  .winningline {
+    width: 100%;
+    opacity: 1;
+  }
+}
